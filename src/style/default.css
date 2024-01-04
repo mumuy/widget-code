@@ -1,0 +1,286 @@
+:host {
+    display: block;
+    font-family: Arial,Helvetica,"Microsoft Yahei";
+    font-size: 14px;
+    --panel-background-color: #2d2d2d;
+    --panel-text-color: #ccc;
+    --side-background-color: rgba(255, 255, 255, 0.05);
+    --side-text-color: #ccc;
+    --side-border-color: rgba(255, 255, 255, 0.075);
+    --scrollbar-track-color: rgba(255,255,255,0.1);
+    --scrollbar-thumb-color: rgba(255,255,255,0.5);
+    --button-background-color: rgba(255,255,255,0.1);
+    --button-text-color: rgba(255,255,255,0.5);
+    --code-comment: #ccc;
+    --code-keyword: #ccc;
+    --code-buildin: #ccc;
+    --code-operator: #ccc;
+    --code-punctuation: #ccc;
+    --code-function: #ccc;
+    --code-class: #ccc;
+    --code-parameter: #ccc;
+    --code-property: #ccc;
+    --code-value: #ccc;
+    --code-variable: #ccc;
+    --code-literal: #ccc;
+    --code-number: #ccc;
+    --code-string: #ccc;
+    --code-regex: #ccc;
+    --code-statement: #ccc;
+    --code-selector: #ccc;
+    --code-pseudo: #ccc;
+    --code-tag: #ccc;
+    --code-directive: #ccc;
+}
+*{
+    padding:0;
+    margin:0;
+}
+a{
+    text-decoration: none;
+    color:#333;
+}
+code{
+    font-family: Menlo,Monaco,Consolas,'Andale Mono','lucida console','Courier New',monospace;
+    tab-size: 4;
+}
+pre{
+    white-space: pre-wrap;
+}
+.mod-panel{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background: var(--panel-background-color);
+    color: var(--panel-text-color);
+    overflow: hidden;
+}
+.mod-panel .hd{
+    position: relative;
+    padding: 0 20px;
+    margin-bottom: 1px;
+    line-height: 36px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 0 rgba(255,255,255, 0.1);
+}
+.mod-panel .hd .btn{
+    float: right;
+    position: relative;
+    display: block;
+    width: 30px;
+    height: 30px;
+    margin: 3px -10px;
+    background: var(--button-background-color);
+    border: none;
+    border-radius: 4px;
+    text-indent: -33em;
+    overflow: hidden;
+    cursor: pointer;
+}
+.mod-panel .hd .btn::before{
+    position: absolute;
+    left: 6px;
+    top: 9px;
+    display: block;
+    width: 9px;
+    height: 12px;
+    content: "";
+    border: 2px solid var(--button-text-color);
+    border-radius: 2px;
+}
+.mod-panel .hd .btn::after{
+    position: absolute;
+    left: 11px;
+    top: 5px;
+    display: block;
+    width: 10px;
+    height: 12px;
+    content: "";
+    border-top: 2px solid var(--button-text-color);
+    border-right: 2px solid var(--button-text-color);
+    border-radius: 2px;
+}
+.mod-panel .hd .notice{
+    display: none;
+    position: absolute;
+    right: 3px;
+    top: 3px;
+    z-index: 99;
+    padding: 0 10px;
+    background: #f8f9fa;
+    line-height: 30px;
+    color: #6c757d;
+    border-radius: 3px;
+    overflow: hidden;
+}
+.mod-panel .hd .notice-success{
+    display: block;
+    background: #d1e7dd;
+    color: #146c43;
+    animation: flip;
+    animation-duration: 4s;
+}
+.mod-panel .hd .notice-error{
+    display: block;
+    background: #f8d7da;
+    color: #b02a37;
+    animation: flip;
+    animation-duration: 4s;
+}
+.mod-panel .bd{
+    flex: 1;
+    overflow-y: auto;
+}
+.mod-panel .outer{
+    position: relative;
+    padding: 5px 10px 5px 60px;
+    counter-reset: lineNumber;
+}
+.mod-panel .outer::before{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 50px;
+    height: 100%;
+    background-color: var(--side-background-color);
+    border-right: 2px solid var(--side-border-color);
+    content: '';
+}
+.mod-panel .line{
+    position: relative;
+    min-height: 24px;
+    line-height: 24px;
+}
+.mod-panel .line::before{
+    position: absolute;
+    width: 32px;
+    left: -52px;
+    text-align: right;
+    counter-increment: lineNumber 1;
+    content: counter(lineNumber);
+    color: var(--side-text-color);
+}
+.mod-panel code .comment{
+    color: var(--code-comment);
+}
+.mod-panel code .keyword{
+    color: var(--code-keyword);
+}
+.mod-panel code .buildin{
+    color: var(--code-buildin);
+}
+.mod-panel code .operator{
+    color: var(--code-operator);
+}
+.mod-panel code .punctuation{
+    color: var(--code-punctuation);
+}
+.mod-panel code .function{
+    color: var(--code-function);
+}
+.mod-panel code .class{
+    color: var(--code-class);
+}
+.mod-panel code .number{
+    color: var(--code-number);
+}
+.mod-panel code .string{
+    color: var(--code-string);
+}
+.mod-panel code .regex{
+    color: var(--code-regex);
+}
+.mod-panel code .variable{
+    color: var(--code-variable);
+}
+.mod-panel code .property{
+    color: var(--code-property);
+}
+.mod-panel code .literal{
+    color: var(--code-literal);
+}
+.mod-panel code .value{
+    color: var(--code-value);
+}
+.mod-panel code .selector{
+    color: var(--code-selector);
+}
+.mod-panel code .attribute{
+    color: var(--code-attribute);
+}
+.mod-panel code .pseudo{
+    color: var(--code-pseudo);
+}
+.mod-panel code .statement{
+    color: var(--code-statement);
+}
+.mod-panel code .tag{
+    color: var(--code-tag);
+}
+.mod-panel code .directive{
+    color: var(--code-directive);
+}
+
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+::-webkit-scrollbar-track {
+    background-color: var(--scrollbar-track-color);
+}
+::-webkit-scrollbar-thumb {
+    background-color: var(--scrollbar-thumb-color);
+    border-radius: 4px;
+}
+@keyframes flip {
+    0% {
+        display: block;
+        -webkit-animation-timing-function: ease-in;
+        animation-timing-function: ease-in;
+        opacity: 0;
+        -webkit-transform: perspective(400px) rotateX(90deg);
+        transform: perspective(400px) rotateX(90deg)
+    }
+    4% {
+        -webkit-animation-timing-function: ease-in;
+        animation-timing-function: ease-in;
+        -webkit-transform: perspective(400px) rotateX(-20deg);
+        transform: perspective(400px) rotateX(-20deg)
+    }
+    6% {
+        opacity: 1;
+        -webkit-transform: perspective(400px) rotateX(10deg);
+        transform: perspective(400px) rotateX(10deg)
+    }
+    8% {
+        -webkit-transform: perspective(400px) rotateX(-5deg);
+        transform: perspective(400px) rotateX(-5deg)
+    }
+    10% {
+        opacity: 1;
+        -webkit-transform: perspective(400px);
+        transform: perspective(400px)
+    }
+    90% {
+        opacity: 1;
+        -webkit-transform: perspective(400px);
+        transform: perspective(400px)
+    }
+    92% {
+        -webkit-transform: perspective(400px) rotateX(-5deg);
+        transform: perspective(400px) rotateX(-5deg)
+    }
+    96% {
+        -webkit-animation-timing-function: ease-in;
+        animation-timing-function: ease-in;
+        -webkit-transform: perspective(400px) rotateX(-20deg);
+        transform: perspective(400px) rotateX(-20deg)
+    }
+    100% {
+        opacity: 0;
+        display: none;
+        -webkit-transform: perspective(400px) rotateX(90deg);
+        transform: perspective(400px) rotateX(90deg)
+    }
+}

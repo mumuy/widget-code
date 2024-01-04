@@ -1,0 +1,50 @@
+:host {
+    --panel-background-color: #f8f8f8;
+    --panel-text-color: #666;
+    --side-background-color: rgba(0, 0, 0, 0.05);
+    --side-text-color: #666;
+    --side-border-color: rgba(0, 0, 0, 0.075);
+    --scrollbar-track-color: rgba(0, 0, 0, 0.1);
+    --scrollbar-thumb-color: rgba(0, 0, 0, 0.5);
+    --button-background-color: rgba(0, 0, 0, 0.1);
+    --button-text-color: rgba(0, 0, 0, 0.5);
+    --code-comment: #999;
+    --code-keyword: #c6c;
+    --code-operator: #888;
+    --code-punctuation: #888;
+    --code-variable: #fea42e;
+    --code-function: #3770a9;
+    --code-parameter: #888;
+    --code-property: #e9ba00;
+    --code-literal: #45b6c6;
+    --code-number: #fea42e;
+    --code-string: #3e9a3a;
+    --code-regex: #3e9a3a;
+    --code-class: #ffcc00;
+
+    --code-selector: #e9ba00;
+    --code-pseudo: #999;
+    --code-attribute: #fea42e;
+    --code-statement: #c6c;
+    
+    --code-tag: #fea42e;
+    --code-script: #999;
+    --code-style: #999;
+}
+:host-context([language='css']){
+    --code-variable: #f16f6f;
+    --code-attribute: #3e9a3a;
+}
+[language='css']{
+    --code-attribute: #3e9a3a;
+}
+[language='html']{
+    --code-value: #3e9a3a;
+}
+[language="php"]{
+    --code-tag: #3770a9;
+    --code-variable: #e9ba00;
+}
+.mod-panel code .string{
+    --code-variable: #f16f6f;
+}

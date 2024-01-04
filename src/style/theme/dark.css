@@ -1,0 +1,49 @@
+:host {
+    --panel-background-color: #2d2d2d;
+    --panel-text-color: #ccc;
+    --side-background-color: rgba(255, 255, 255, 0.05);
+    --side-text-color: #ccc;
+    --side-border-color: rgba(255, 255, 255, 0.075);
+    --scrollbar-track-color: rgba(255,255,255,0.1);
+    --scrollbar-thumb-color: rgba(255,255,255,0.5);
+    --button-background-color: rgba(255,255,255,0.1);
+    --button-text-color: rgba(255,255,255,0.5);
+    --code-comment: #999;
+    --code-keyword: #c9c;
+    --code-operator: #ccc;
+    --code-punctuation: #ccc;
+    --code-variable: #c90;
+    --code-function: #69c;
+    --code-parameter: #ccc;
+    --code-property: #d1bf5e;
+    --code-literal: #6cc;
+    --code-number: #c90;
+    --code-string: #9c9;
+    --code-regex: #9c9;
+    --code-class: #e8da93;
+
+    --code-selector: #d1bf5e;
+    --code-pseudo: #ccc;
+    --code-attribute: #c90;
+    --code-statement: #c9c;
+    
+    --code-tag: #c66;
+    --code-directive: #ccc;
+}
+:host-context([language='css']){
+    --code-variable: #c66;
+    --code-attribute: #9c9;
+}
+[language='css']{
+    --code-attribute: #9c9;
+}
+[language='html']{
+    --code-value: #9c9;
+}
+[language="php"]{
+    --code-tag: #69c;
+    --code-variable: #d1bf5e;
+}
+.mod-panel code .string{
+    --code-variable: #c66;
+}

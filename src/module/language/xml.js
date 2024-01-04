@@ -1,0 +1,29 @@
+export default {
+    name:'XML',
+    value:'xml',
+    groups:[{
+        type:'xml',
+        match:/[\s\S]+/g,
+        default:true,
+        rules:[{
+            type:'comment',
+            match:/<!--[\s\S]+-->/g
+        },{
+            type:'tag',
+            match:/<[\w\-]+(\s)?.*?>|<\/[\w-]+>/g,
+            rules:[{
+                type:'punctuation',
+                match:/=/g
+            },{
+                type:'comment',
+                match:/[<>\/]/g
+            },{
+                type:'attribute',
+                match:/(?<=\s)\S+?(?=[\s=])/g,
+            },{
+                type:'value',
+                match:/'.+?'|".+?"/g,
+            }]
+        }]
+    }]
+};
