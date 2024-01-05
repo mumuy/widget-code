@@ -12,7 +12,7 @@ class WidgetCode extends HTMLElement {
     get language(){
         return this.getAttribute('language')||'text';
     }
-    set language(theme){
+    set language(language){
         this.setAttribute('language',language);
     }
     get theme(){
@@ -42,7 +42,6 @@ class WidgetCode extends HTMLElement {
             let $notice = $module.querySelector('.notice');
             // 代码复制
             $copyBtn.onclick = function(){
-                console.log('[content]',content);
                 copyToClipboard(content).then(function(){
                     $notice.classList.add('notice-success');
                     $notice.innerHTML = '复制成功';

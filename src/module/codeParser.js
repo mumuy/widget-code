@@ -52,8 +52,8 @@ class codeParser{
             return tokenKeys;
         };
         let parseEntity = function(language,content){
-            if(['html','php'].includes(language)){
-                return content.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+            if(['xml','html','php'].includes(language)){
+                return content.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/'/g,'&apos;').replace(/"/g,'&quot;');
             }
             return content;
         };
@@ -140,19 +140,22 @@ class codeParser{
         // 语言分组解析
         if(_.#language?.groups){
             let ranges = [];
-            _.#language.groups.filter(item=>!item.default).forEach(function(item){
-                let matchList = _.#content.matchAll(item.match);
+            _.#language.groups.filter(group=>!group.default).forEach(function(group){
+                let matchList = _.#content.matchAll(group.match);
                 if(matchList){
                     for(let temp of matchList){
-                        let value = temp[0];
                         let range = {
-                            value:value,
+                            content:temp[0],
                             start:temp.index,
-                            end:temp.index + value.length
+                            end:temp.index + temp[0].length
                         };
                         ranges.push(range);
                         parseResult = parseResult.concat(
-                            parseContent(item.type,_.#content,item.rules).filter(item=>item.start>=range.start&&item.end<=range.end)
+                            parseContent(group.type,range.content,group.rules).map(item=>{
+                                item.start += range.start;
+                                item.end += range.start;
+                                return item;
+                            })
                         );
                     }
                 }
@@ -166,13 +169,13 @@ class codeParser{
                 });
                 return isInRange;
             }
-            _.#language.groups.filter(item=>item.default).forEach(function(group){
+            _.#language.groups.filter(group=>group.default).forEach(function(group){
                 let matchList = _.#content.matchAll(group.match);
                 if(matchList){
                     for(let temp of matchList){
                         parseResult = parseResult.concat(
                             parseContent(group.type,_.#content,group.rules).filter(item=>!inOtherRanges(item))
-                        )
+                        );
                     }
                 }
             });

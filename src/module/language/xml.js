@@ -6,6 +6,23 @@ export default {
         match:/[\s\S]+/g,
         default:true,
         rules:[{
+            type:'doctype',
+            match:/<!DOCTYPE[\s\S]+?>/g,
+            rules:[{
+                type:'keyword',
+                match:/(?<=\s)\S+?(?=[\s=>])/g,
+            },{
+                type:'value',
+                match:/'.+?'|".+?"/g,
+            }]
+        },{
+            type:'meta',
+            match:/<\?xml\s[\s\S]+?\?>/g,
+            rules:[{
+                type:'value',
+                match:/'.+?'|".+?"/g,
+            }]
+        },{
             type:'comment',
             match:/<!--[\s\S]+-->/g
         },{
@@ -19,7 +36,7 @@ export default {
                 match:/[<>\/]/g
             },{
                 type:'attribute',
-                match:/(?<=\s)\S+?(?=[\s=])/g,
+                match:/(?<=\s)\S+?(?=[\s=>])/g,
             },{
                 type:'value',
                 match:/'.+?'|".+?"/g,

@@ -27,9 +27,10 @@
     --code-attribute: #fea42e;
     --code-statement: #c6c;
     
-    --code-tag: #fea42e;
-    --code-script: #999;
-    --code-style: #999;
+    --code-doctype: #69c;
+    --code-meta: #69c;
+    --code-tag: #f16f6f;
+    --code-directive: #999;
 }
 :host-context([language='css']){
     --code-variable: #f16f6f;

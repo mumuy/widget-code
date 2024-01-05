@@ -133,27 +133,35 @@ body{
 }</widget-code>
                                     </div>
                                     <div class="panel">
-<widget-code language="html">&lt;article name="test"&gt;
-    &lt;h1&gt;文章标题&lt;/h1&gt;
-    &lt;section&gt;
-        &lt;p&gt;这段文字是文章段落内容&lt;/p&gt;
-    &lt;/section&gt;
-&lt;/article&gt;
-&lt;!--这是一段注释。注释不会在浏览器中显示。--&gt;
-&lt;style&gt;
-body{
-    font-size: 15px;
-}
-&lt;/style&gt;
-&lt;script&gt;
-let person = {
-    name:'Tom',
-    age:12
-};
-const template = `字符串模板
-你好, ${some}
-欢迎使用本组件`;
-&lt;/script&gt;</widget-code>
+<widget-code language="html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;测试网页&lt;/title&gt;
+        &lt;style&gt;
+            body{
+                font-size: 15px;
+            }
+        &lt;/style&gt;
+        &lt;script&gt;
+        let person = {
+            name:'Tom',
+            age:12
+        };
+        const template = `字符串模板
+        你好, ${some}
+        欢迎使用本组件`;
+        &lt;/script&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;article name="test"&gt;
+            &lt;h1&gt;文章标题&lt;/h1&gt;
+            &lt;section&gt;
+                &lt;p&gt;这段文字是文章段落内容&lt;/p&gt;
+            &lt;/section&gt;
+        &lt;/article&gt;
+        &lt;!--这是一段注释。注释不会在浏览器中显示。--&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</widget-code>
                                     </div>
                                     <div class="panel">
 <widget-code language="php">&lt;div name="test"&gt;

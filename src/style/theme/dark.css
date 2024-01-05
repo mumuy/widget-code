@@ -27,6 +27,8 @@
     --code-attribute: #c90;
     --code-statement: #c9c;
     
+    --code-doctype: #69c;
+    --code-meta: #69c;
     --code-tag: #c66;
     --code-directive: #ccc;
 }
