@@ -9,6 +9,7 @@
     --button-background-color: rgba(255,255,255,0.1);
     --button-text-color: rgba(255,255,255,0.5);
     --code-comment: #999;
+    --code-shell: #999;
     --code-keyword: #c9c;
     --code-operator: #ccc;
     --code-punctuation: #ccc;
@@ -26,7 +27,7 @@
     --code-pseudo: #ccc;
     --code-attribute: #c90;
     --code-statement: #c9c;
-    
+
     --code-doctype: #69c;
     --code-meta: #69c;
     --code-tag: #c66;

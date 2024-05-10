@@ -12,6 +12,7 @@
     --button-background-color: rgba(255,255,255,0.1);
     --button-text-color: rgba(255,255,255,0.5);
     --code-comment: #ccc;
+    --code-shell: #ccc;
     --code-keyword: #ccc;
     --code-buildin: #ccc;
     --code-operator: #ccc;
@@ -162,6 +163,9 @@ pre{
 }
 .mod-panel code .comment{
     color: var(--code-comment);
+}
+.mod-panel code .shell{
+    color: var(--code-shell);
 }
 .mod-panel code .keyword{
     color: var(--code-keyword);

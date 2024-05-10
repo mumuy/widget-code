@@ -9,7 +9,7 @@
 
 ## 支持语言
 
-XML、HTML（Vue）、CSS、Javacript、PHP、Text
+XML、HTML（Vue）、CSS、Javacript、Typescript、Node.js 、PHP、Text
 
 
 ## 主题风格

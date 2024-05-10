@@ -1,10 +1,10 @@
 import scmascript from './rules/scmascript.js';
 
 export default {
-    name:'Javascript',
-    value:'javascript',
+    name:'TypeScript',
+    value:'typescript',
     groups:[{
-        type:'javascript',
+        type:'typescript',
         match:/[\s\S]+/g,
         default:true,
         rules:[
@@ -18,6 +18,10 @@ export default {
             },
             ...scmascript.variable,
             ...scmascript.keyword,
+            {
+                type:'keyword',
+                match:/(?<=\W)(type|any|private|protected|abstract|never|readonly)(?=\W)/g,
+            },
             ...scmascript.buildin,
             ...scmascript.operator,
             ...scmascript.punctuation,

@@ -1,20 +1,28 @@
 import scmascript from './rules/scmascript.js';
 
 export default {
-    name:'Javascript',
-    value:'javascript',
+    name:'Node.js',
+    value:'nodejs',
     groups:[{
-        type:'javascript',
+        type:'nodejs',
         match:/[\s\S]+/g,
         default:true,
         rules:[
             ...scmascript.comment,
+            {
+                type:'shell',
+                match:/#!.+?\n?/g
+            },
             ...scmascript.string,
             ...scmascript.literal,
             ...scmascript.regex,
             {
                 type:'variable',
-                match:/(?<=\W)window|document(?=\.)/g
+                match:/(?<=\W)global|process|module(?=\.)/g
+            },
+            {
+                type:'variable',
+                match:/require(?=\(.+?\))/g
             },
             ...scmascript.variable,
             ...scmascript.keyword,
