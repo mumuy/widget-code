@@ -63,9 +63,6 @@ class codeParser{
             rules.forEach(rule=>{
                 if(tokenKeys.includes(rule.type)){
                     let matchList = content.matchAll(rule.match);
-                    if(rule.type=='parameter'){
-                        console.log('content',content,rule.match,matchList);
-                    }
                     if(matchList){
                         for(let item of matchList){
                             let value = item[0];
@@ -184,7 +181,7 @@ class codeParser{
             });
             parseResult.sort((item1,item2)=>item1.start>=item2.start?1:-1);
         }
-        console.log('[parseResult]',parseResult);
+        // console.log('[parseResult]',parseResult);
         // 归纳成单行
         parseResult.forEach((item,index)=>{
             if(item.value!='\n'){
