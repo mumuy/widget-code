@@ -14,26 +14,26 @@ export default {
                 match:/#!.+?\n?/g
             },
             ...scmascript.string,
-            ...scmascript.literal,
+            ...scmascript.parameter,
             ...scmascript.regex,
+            ...scmascript.literal,
+            ...scmascript.keyword,
+            ...scmascript.buildin,
+            ...scmascript.variable,
             {
                 type:'variable',
-                match:/(?<=\W)global|process|module(?=\.)/g
+                match:/(?<=\W)global|process|module|exports(?=\.)/g
             },
             {
                 type:'variable',
                 match:/require(?=\(.+?\))/g
             },
-            ...scmascript.variable,
-            ...scmascript.keyword,
-            ...scmascript.buildin,
+            ...scmascript.number,
             ...scmascript.operator,
             ...scmascript.punctuation,
-            ...scmascript.number,
+            ...scmascript.function,
             ...scmascript.class,
             ...scmascript.property,
-            ...scmascript.function,
-            ...scmascript.parameter,
         ]
     }]
 };

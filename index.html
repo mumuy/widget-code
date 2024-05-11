@@ -51,6 +51,7 @@
                                 <div class="c-hd">
                                     <ul class="nav">
                                         <li><a href="javascript:;">Javascript</a></li>
+                                        <li><a href="javascript:;">Typescript</a></li>
                                         <li><a href="javascript:;">CSS</a></li>
                                         <li><a href="javascript:;">HTML</a></li>
                                         <li><a href="javascript:;">PHP</a></li>
@@ -93,6 +94,48 @@ class Animal {
 }
 // 方法调用
 console.log(person.name);</widget-code>
+                                    </div>
+                                    <div class="panel">
+<widget-code language="typescript">class Person {
+    public name: string;
+    private age: number;
+    protected gender: string;
+    
+    constructor(name: string, age: number, gender: string) {
+        this.name = name;
+        this.age = age;
+        this.gender = gender;
+    }
+    
+    sayHello(): void {
+        console.log(`hello, my name is ${this.name}, I'm ${this.age} years old`);
+    }
+}
+
+class Student extends Person {
+    grade: number;
+
+    constructor(name: string, age: number, gender: string, grade: number) {
+        super(name, age, gender);
+        this.grade = grade;
+    }
+
+    study(): void {
+        console.log(`I'm studying in grade ${this.grade}`);
+    }
+
+    showGender(): void {
+        console.log(`My gender is ${this.gender}`); // 可以访问父类的protected属性
+    }
+}
+
+const person = new Person('Tom', 20, 'male');
+console.log(person.name); // 可以访问public属性
+console.log(person.age); // 报错，不能访问private属性
+
+const student = new Student('Jerry', 18, 'male', 1);
+console.log(student.gender); // 报错，不能访问protected属性
+student.showGender(); // 可以访问protected属性</widget-code>
                                     </div>
                                     <div class="panel">
 <widget-code language="css">/*

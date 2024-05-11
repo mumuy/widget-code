@@ -1,5 +1,5 @@
-import dark from '../style/theme/dark.css' assert { type: 'css'};
-import light from '../style/theme/light.css' assert { type: 'css'};
+import dark from '../style/theme/dark.css' with { type: 'css'};
+import light from '../style/theme/light.css' with { type: 'css'};
 
 export default [{
     'name':'Dark',

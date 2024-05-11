@@ -18,7 +18,7 @@ export default {
             match:/\".+?\"|\'.+?\'/g,
             rules:[{
                 type:'variable',
-                match:/{\$.+}/g
+                match:/{\$.+?}/g
             }]
         },{
             type:'literal',

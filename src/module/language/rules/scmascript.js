@@ -11,24 +11,28 @@ export default {
         match:/\`[\s\S]+?\`/g,
         rules:[{
             type:'variable',
-            match:/\${.+}/g
+            match:/\${.+?}/g
         }]
     }],
-    literal:[{
-        type:'literal',
-        match:/(?<=\W)true|false|null|undefined(?=\W)/g
+    parameter:[{
+        type:'parameter',
+        match:/(?<=\([$\w\s=,]*[\s,]*\s?)[$\w\s=]+(?=\s?[\s,]*[$\w\s=,]*\))/g,
+        rules:[{
+            type:'literal',
+            match:/(?<=:\s*\|?\s*)\w+(?=[\s,:;{\)])/g
+        }]
     }],
     regex:[{
         type:'regex',
         match:/\/.+?\/[gimu\s]/g
     }],
-    variable:[{
-        type:'variable',
-        match:/(?<=\W)this|parent|self|globalThis|super|navigator|console(?=\.)/g
+    literal:[{
+        type:'literal',
+        match:/(?<=\W)true|false|null|undefined(?=\W)/g
     }],
     keyword:[{
         type:'keyword',
-        match:/(?<=\W)(return|void|continue|for|if|else|switch|do|while|default|throw|delete|try|catch|finally|function|with|debugger|class|enum|extends|export|import|impelements|new|typeof|var|let|const|public|yield|interface|package|static|async|await|instanceof)(?=\W)/g,
+        match:/(^|(?<=\W))(return|void|continue|for|if|else|switch|do|while|default|throw|delete|try|catch|finally|function|with|debugger|class|enum|extends|export|import|impelements|new|typeof|var|let|const|public|yield|interface|package|static|async|await|instanceof)(?=\W)/g,
     },{
         type:'keyword',
         match:/(?<=for\s*\(.+?\s)(in|of)(?=\s.+?\))/g
@@ -41,7 +45,11 @@ export default {
     }],
     buildin:[{
         type:'buildin',
-        match:/(?<=\W)(Object|Function|Array|Stirng|Boolean|Number|Date|RegExp|Buffer|Math|Error|JSON|Reflect|Proxy|NaN|URL|Infinity|Symbol|BigInt)(?=\W)/g
+        match:/(^|(?<=\W))(Object|Function|Array|Stirng|Boolean|Number|Date|RegExp|Buffer|Blob|Math|Error|JSON|Reflect|Proxy|Worker|WebSocket|EventSource|URL|Infinity|Symbol|BigInt|NaN)(?=\W)/g
+    }],
+    variable:[{
+        type:'variable',
+        match:/(^|(?<=\W))this|parent|self|globalThis|super|navigator|console(?=\.)/g
     }],
     operator:[{
         type:'operator',
@@ -50,10 +58,6 @@ export default {
     punctuation:[{
         type:'punctuation',
         match:/[\(\)\{\}\[\]\.;,:#]/g
-    }],
-    number:[{
-        type:'number',
-        match:/\-?\d+e?(_\d+)*(\.\d)?(_\d+)*/g
     }],
     function:[{
         type:'function',
@@ -67,8 +71,8 @@ export default {
         type:'property',
         match:/(?<=[\s])#?[\w$]+(?=[:])|(?<=[\.])#?[\w$]+(?=[=;\s\)])/g
     }],
-    parameter:[{
-        type:'parameter',
-        match:/(?<=[,\(]\s*)[\w$]+(?=\s*[,\)])/g
+    number:[{
+        type:'number',
+        match:/\-?\d+e?(_\d+)*(\.\d)?(_\d+)*/g
     }]
 };

@@ -10,26 +10,43 @@ export default {
         rules:[
             ...scmascript.comment,
             ...scmascript.string,
-            ...scmascript.literal,
-            ...scmascript.regex,
             {
-                type:'variable',
-                match:/(?<=\W)window|document(?=\.)/g
+                type:'parameter',
+                match:/(?<=\([$\w\s=:,]*[\s,]*\s?)[$\w\s=:]+(?=\s?[\s,]*[$\w\s=:,]*\))/g,
+                rules:[
+                    ...scmascript.string,
+                    ...scmascript.regex,
+                    ...scmascript.literal,
+                    {
+                        type:'literal',
+                        match:/(?<=:\s*\|?\s*)\w+(?=([\s,:;{\)]|$))/g
+                    },
+                    ...scmascript.number
+                ]
             },
-            ...scmascript.variable,
+            ...scmascript.regex,
+            ...scmascript.literal,
+            {
+                type:'literal',
+                match:/(?<=:\s*\|?\s*)\w+(?=[\s,:;{\)])/g
+            },
             ...scmascript.keyword,
             {
                 type:'keyword',
-                match:/(?<=\W)(type|any|private|protected|abstract|never|readonly)(?=\W)/g,
+                match:/(^|(?<=\W))(type|private|protected|abstract|readonly)(?=\W)/g
             },
             ...scmascript.buildin,
+            {
+                type:'variable',
+                match:/(^|(?<=\W))(window|document)(?=\.)/g
+            },
+            ...scmascript.variable,
+            ...scmascript.number,
             ...scmascript.operator,
             ...scmascript.punctuation,
-            ...scmascript.number,
+            ...scmascript.function,
             ...scmascript.class,
             ...scmascript.property,
-            ...scmascript.function,
-            ...scmascript.parameter,
         ]
     }]
 };

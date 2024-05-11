@@ -10,22 +10,22 @@ export default {
         rules:[
             ...scmascript.comment,
             ...scmascript.string,
-            ...scmascript.literal,
+            ...scmascript.parameter,
             ...scmascript.regex,
-            {
-                type:'variable',
-                match:/(?<=\W)window|document(?=\.)/g
-            },
-            ...scmascript.variable,
+            ...scmascript.literal,
             ...scmascript.keyword,
             ...scmascript.buildin,
+            ...scmascript.variable,
+            {
+                type:'variable',
+                match:/(^|(?<=\W))(window|document)(?=\.)/g
+            },
+            ...scmascript.number,
             ...scmascript.operator,
             ...scmascript.punctuation,
-            ...scmascript.number,
+            ...scmascript.function,
             ...scmascript.class,
             ...scmascript.property,
-            ...scmascript.function,
-            ...scmascript.parameter,
         ]
     }]
 };
