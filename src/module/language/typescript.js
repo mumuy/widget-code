@@ -8,6 +8,17 @@ export default {
         match:/[\s\S]+/g,
         default:true,
         rules:[
+            {
+                type:'comment',
+                match:/\/\*[^\/]*\*\//g,
+                rules:[{
+                    type:'keyword',
+                    match:/(?<=\W)@\w+(?=(\W|$))/g
+                },{
+                    type:'literal',
+                    match:/(?<={)\w+(?=})/g
+                }]
+            },
             ...scmascript.comment,
             ...scmascript.string,
             {
@@ -37,7 +48,7 @@ export default {
             ...scmascript.keyword,
             {
                 type:'keyword',
-                match:/(^|(?<=\W))(type|private|protected|abstract|readonly|keyof)(?=\W)/g
+                match:/(^|(?<=\W))(type|private|protected|abstract|readonly|keyof|namespace)(?=\W)/g
             },
             ...scmascript.buildin,
             {

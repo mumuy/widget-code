@@ -96,7 +96,13 @@ class Animal {
 console.log(person.name);</widget-code>
                                     </div>
                                     <div class="panel">
-<widget-code language="typescript">class Person {
+<widget-code language="typescript">/**
+    * Represents person.
+    * @constructor
+    * @param {string} title - The title of the person.
+    * @param {string} author - The author of the person.
+*/
+class Person {
     public name: string;
     private age: number;
     protected gender: string;
