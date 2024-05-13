@@ -30,10 +30,14 @@ export default {
                 type:'literal',
                 match:/(?<=:\s*\|?\s*)\w+(?=[\s,:;{\)])/g
             },
+            {
+                type:'literal',
+                match:/(^|(?<=\W))(any|unknown|never|void)(?=\W)/g
+            },
             ...scmascript.keyword,
             {
                 type:'keyword',
-                match:/(^|(?<=\W))(type|private|protected|abstract|readonly)(?=\W)/g
+                match:/(^|(?<=\W))(type|private|protected|abstract|readonly|keyof)(?=\W)/g
             },
             ...scmascript.buildin,
             {

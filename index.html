@@ -112,6 +112,9 @@ console.log(person.name);</widget-code>
     }
 }
 
+type MapToPromise&lt;T&gt; = { [K in keyof T]: Promise&lt;T[K]&gt; };
+
+
 class Student extends Person {
     grade: number;
 
