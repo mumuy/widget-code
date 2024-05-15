@@ -45,7 +45,7 @@ export default {
     }],
     buildin:[{
         type:'buildin',
-        match:/(^|(?<=\W))(Object|Function|Array|Stirng|Boolean|Number|Date|RegExp|Buffer|ArrayBuffer|Int8Array|Uint8ClampedArray|Int16Array|Int32Array|Float32Array|Float64Array|Uint32Array|BigUint64Array|Blob|Math|Error|EvalError|RangeError|ReferenceError|SyntaxError|TypeError|URIError|JSON|Reflect|Proxy|Worker|WebSocket|EventSource|FileReader|FormData|URL|Infinity|Symbol|BigInt|NaN)(?=\W)/g
+        match:/(^|(?<=\W))(Object|Function|Array|Stirng|Boolean|Number|Date|RegExp|Buffer|ArrayBuffer|Int8Array|Uint8ClampedArray|Int16Array|Int32Array|Float32Array|Float64Array|Uint32Array|BigUint64Array|Blob|Math|Error|EvalError|RangeError|ReferenceError|SyntaxError|TypeError|URIError|JSON|Reflect|Proxy|Worker|WebSocket|EventSource|FileReader|FormData|Set|Map|WeakSet|WeakMap|URL|Infinity|Symbol|BigInt|NaN)(?=\W)/g
     }],
     variable:[{
         type:'variable',
