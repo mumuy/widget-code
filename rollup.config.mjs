@@ -36,7 +36,7 @@ const commonPlugins = [
     input: './src/widget-code.js',
     output:[{
         file: './dist/widget-code.min.js',
-        format: 'iife',
+        format: 'umd',
         banner
     }],
     acornInjectPlugins: [ importAssertions ],
