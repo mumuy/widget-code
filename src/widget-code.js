@@ -5,6 +5,7 @@ import styleSheet from './style/default.css' assert { type: 'css'};
 class WidgetCode extends HTMLElement {
     constructor() {
         super();
+        this.attachShadow({mode:'open'});
     }
     static get observedAttributes(){
         return ['language','theme'];
@@ -24,8 +25,6 @@ class WidgetCode extends HTMLElement {
     connectedCallback () {
         let _ = this;
         // 模板
-        _.attachShadow({mode:'open'});
-
         setTimeout(function(){
             // 代码解析
             let content = _.textContent;
