@@ -13,14 +13,14 @@ class WidgetCode extends HTMLElement {
     get language(){
         return this.getAttribute('language')||'text';
     }
-    set language(language){
-        this.setAttribute('language',language);
+    set language(value){
+        this.setAttribute('language',value);
     }
     get theme(){
         return this.getAttribute('theme')||'dark';
     }
-    set theme(theme){
-        this.setAttribute('theme',theme);
+    set theme(value){
+        this.setAttribute('theme',value);
     }
     connectedCallback () {
         let _ = this;
