@@ -1,4 +1,5 @@
 import html from './html.js';
+import structuredClone from '../runtime/structuredClone.js';
 
 let groups = structuredClone(html.groups);
 
