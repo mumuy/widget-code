@@ -1,5 +1,5 @@
-let clone = structuredClone||function structuredClone(obj){
+let structuredClone = structuredClone||function(obj){
     return JSON.parse(JSON.stringify(obj));
-};
+}; 
 
-export default clone;
+export default structuredClone;
