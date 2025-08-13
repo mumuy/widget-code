@@ -93,7 +93,7 @@ class codeParser{
             let result = [];
             parseResult.forEach(item=>{
                 if(index<item.start){
-                    let value = content.substring(index,item.start);
+                    let value = content.slice(index,item.start);
                     let start = index;
                     let tokens = value.match(/\n|.+/g).map(function(subValue){
                         let end = start + subValue.length;
@@ -116,7 +116,7 @@ class codeParser{
                 }
             });
             if(index<endIndex){
-                let value = content.substring(index,endIndex);
+                let value = content.slice(index,endIndex);
                 let start = index;
                 let tokens = value.match(/\n|.+/g).map(function(subValue){
                     let end = start + subValue.length;
