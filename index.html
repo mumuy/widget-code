@@ -9,14 +9,16 @@
         <meta name="renderer" content="webkit">
         <meta http-equiv="Cache-Control" content="no-transform" />
         <meta name="format-detection" content="telephone=no"/>
-        <title>代码美化组件</title>
         <meta name="keywords" content="代码美化,代码格式化,代码着色组件,代码展示标签,代码显示组件"/>
         <meta name="description" content="本项目提供代码网页美化组件，可以用于在网页中显示Javascript、CSS、HTML、Java、PHP、Python、C++、C#等代码"/>
+        <title>代码美化组件</title>
+        <link rel="canonical" href="https://passer-by.com/widget-code/"/>
+        <link rel="stylesheet" href="https://passer-by.com/static/style/common.css">
         <link rel="stylesheet" href="static/style/index.css">
         <script type="text/javascript">
             setTimeout(function(){
                 if(location.protocol.indexOf('http')>-1&&location.hostname.indexOf('passer-by.com')==-1){
-                    location.href = 'http://passer-by.com/';
+                    location.href = 'https://passer-by.com/';
                 }else if( window.top != window.self ) {
                     window.top.location = self.location.href;
                 }
@@ -25,41 +27,65 @@
     </head>
     <body>
         <div class="wrapper">
-            <div class="header">
-                <div class="inner">
-                    <div class="mod-head">
+            <header>
+                <div class="mod-head">
+                    <div class="inner">
                         <div class="bd">
-                            <a class="btn" href="https://github.com/mumuy/widget-code/" rel="nofollow" target="_blank" title="Github">
-                                <svg aria-hidden="true" class="octicon" height="20" title="GitHub " version="1.1" viewBox="0 0 16 16" width="24"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59 0.4 0.07 0.55-0.17 0.55-0.38 0-0.19-0.01-0.82-0.01-1.49-2.01 0.37-2.53-0.49-2.69-0.94-0.09-0.23-0.48-0.94-0.82-1.13-0.28-0.15-0.68-0.52-0.01-0.53 0.63-0.01 1.08 0.58 1.23 0.82 0.72 1.21 1.87 0.87 2.33 0.66 0.07-0.52 0.28-0.87 0.51-1.07-1.78-0.2-3.64-0.89-3.64-3.95 0-0.87 0.31-1.59 0.82-2.15-0.08-0.2-0.36-1.02 0.08-2.12 0 0 0.67-0.21 2.2 0.82 0.64-0.18 1.32-0.27 2-0.27 0.68 0 1.36 0.09 2 0.27 1.53-1.04 2.2-0.82 2.2-0.82 0.44 1.1 0.16 1.92 0.08 2.12 0.51 0.56 0.82 1.27 0.82 2.15 0 3.07-1.87 3.75-3.65 3.95 0.29 0.25 0.54 0.73 0.54 1.48 0 1.07-0.01 1.93-0.01 2.2 0 0.21 0.15 0.46 0.55 0.38C13.71 14.53 16 11.53 16 8 16 3.58 12.42 0 8 0z"></path></svg>
-                                <span>Github</span>
-                            </a>
-                            <a class="btn" href="/">个人网站</a>
+                            <div class="logo">
+                                <a href="/"><img src="https://passer-by.com/static/image/public/logo.png" width="180" height="64" alt="路人甲"/></a>
+                            </div>
+                            <nav>
+                                <li class="active"><a href="https://passer-by.com/project.html">项目</a></li>
+                                <li><a href="https://passer-by.com/writing.html">文字</a></li>
+                                <li><a href="https://passer-by.com/photograph.html">摄影</a></li>
+                                <li><a href="https://passer-by.com/comment.html">留言</a></li>
+                                <li><a href="https://passer-by.com/about.html">关于</a></li>
+                            </nav>
+                            <div class="operation">
+                                <a class="btn" href="https://github.com/mumuy/widget-code/" rel="nofollow" target="_blank" title="Github">
+                                    <svg aria-hidden="true" class="octicon" title="GitHub " version="1.1" viewBox="0 0 16 16" width="24" height="24"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59 0.4 0.07 0.55-0.17 0.55-0.38 0-0.19-0.01-0.82-0.01-1.49-2.01 0.37-2.53-0.49-2.69-0.94-0.09-0.23-0.48-0.94-0.82-1.13-0.28-0.15-0.68-0.52-0.01-0.53 0.63-0.01 1.08 0.58 1.23 0.82 0.72 1.21 1.87 0.87 2.33 0.66 0.07-0.52 0.28-0.87 0.51-1.07-1.78-0.2-3.64-0.89-3.64-3.95 0-0.87 0.31-1.59 0.82-2.15-0.08-0.2-0.36-1.02 0.08-2.12 0 0 0.67-0.21 2.2 0.82 0.64-0.18 1.32-0.27 2-0.27 0.68 0 1.36 0.09 2 0.27 1.53-1.04 2.2-0.82 2.2-0.82 0.44 1.1 0.16 1.92 0.08 2.12 0.51 0.56 0.82 1.27 0.82 2.15 0 3.07-1.87 3.75-3.65 3.95 0.29 0.25 0.54 0.73 0.54 1.48 0 1.07-0.01 1.93-0.01 2.2 0 0.21 0.15 0.46 0.55 0.38C13.71 14.53 16 11.53 16 8 16 3.58 12.42 0 8 0z"></path></svg>
+                                    <span>Github</span>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+                <div class="mod-bg">
+                    <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+                        <defs>
+                            <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path>
+                        </defs>
+                        <g class="parallax">
+                            <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.4)"></use>
+                            <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.6)"></use>
+                            <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.2)"></use>
+                            <use xlink:href="#gentle-wave" x="48" y="7" fill="rgba(255,255,255,1)"></use>
+                        </g>
+                    </svg>
+                </div>
+            </header>
             <div class="container">
-                <div class="mod-panel">
-                    <div class="inner">
-                        <div class="hd">
+                <div class="inner">
+                    <section class="mod-poster">
+                        <div class="bd">
                             <h1>代码着色美化组件<span class="tag">开源算法</span></h1>
                             <p>一个标签实现代码着色美化，让你的代码更加性感！</p>
                         </div>
+                    </section>
+                    <section class="mod-tabs">
+                        <div class="hd">
+                            <ul class="nav">
+                                <li><a href="javascript:;">Javascript</a></li>
+                                <li><a href="javascript:;">Typescript</a></li>
+                                <li><a href="javascript:;">CSS</a></li>
+                                <li><a href="javascript:;">HTML</a></li>
+                                <li><a href="javascript:;">PHP</a></li>
+                            </ul>
+                        </div>
                         <div class="bd">
-                            <div class="box tabs">
-                                <div class="c-hd">
-                                    <ul class="nav">
-                                        <li><a href="javascript:;">Javascript</a></li>
-                                        <li><a href="javascript:;">Typescript</a></li>
-                                        <li><a href="javascript:;">CSS</a></li>
-                                        <li><a href="javascript:;">HTML</a></li>
-                                        <li><a href="javascript:;">PHP</a></li>
-                                    </ul>
-                                </div>
-                                <div class="c-bd">
-                                    <div class="panel">
+                            <div class="panel">
 <widget-code language="javascript">/*
-    代码块注释
+代码块注释
 */
 // 模块导入
 import {myMethod} from './method.js';
@@ -76,65 +102,65 @@ const template = `字符串模板
 const randNumber = [13, 7, 11, 3, 9, 15.4, 17];
 // 对象
 const person = {
-    name:'Tony',
-    age:18,
-    doWork:function(){
-    },
-    doThing(){
-    }
+name:'Tony',
+age:18,
+doWork:function(){
+},
+doThing(){
+}
 };
 // 类
 class Animal {
-    constructor(name, url) {
-        super();
-        this.name = name;
-        this.url = url;
-    }
+constructor(name, url) {
+    super();
+    this.name = name;
+    this.url = url;
+}
 }
 // 方法调用
 console.log(person.name);</widget-code>
-                                    </div>
-                                    <div class="panel">
+                            </div>
+                            <div class="panel">
 <widget-code language="typescript">/**
-    * Represents person.
-    * @constructor
-    * @param {string} title - The title of the person.
-    * @param {string} author - The author of the person.
+* Represents person.
+* @constructor
+* @param {string} title - The title of the person.
+* @param {string} author - The author of the person.
 */
 class Person {
-    public name: string;
-    private age: number;
-    protected gender: string;
+public name: string;
+private age: number;
+protected gender: string;
 
-    constructor(name: string, age: number, gender: string) {
-        this.name = name;
-        this.age = age;
-        this.gender = gender;
-    }
+constructor(name: string, age: number, gender: string) {
+this.name = name;
+this.age = age;
+this.gender = gender;
+}
 
-    sayHello(): void {
-        console.log(`hello, my name is ${this.name}, I'm ${this.age} years old`);
-    }
+sayHello(): void {
+console.log(`hello, my name is ${this.name}, I'm ${this.age} years old`);
+}
 }
 
 type MapToPromise&lt;T&gt; = { [K in keyof T]: Promise&lt;T[K]&gt; };
 
 
 class Student extends Person {
-    grade: number;
+grade: number;
 
-    constructor(name: string, age: number, gender: string, grade: number) {
-        super(name, age, gender);
-        this.grade = grade;
-    }
+constructor(name: string, age: number, gender: string, grade: number) {
+super(name, age, gender);
+this.grade = grade;
+}
 
-    study(): void {
-        console.log(`I'm studying in grade ${this.grade}`);
-    }
+study(): void {
+console.log(`I'm studying in grade ${this.grade}`);
+}
 
-    showGender(): void {
-        console.log(`My gender is ${this.gender}`); // 可以访问父类的protected属性
-    }
+showGender(): void {
+console.log(`My gender is ${this.gender}`); // 可以访问父类的protected属性
+}
 }
 
 const person = new Person('Tom', 20, 'male');
@@ -144,92 +170,92 @@ console.log(person.age); // 报错，不能访问private属性
 const student = new Student('Jerry', 18, 'male', 1);
 console.log(student.gender); // 报错，不能访问protected属性
 student.showGender(); // 可以访问protected属性</widget-code>
-                                    </div>
-                                    <div class="panel">
+                            </div>
+                            <div class="panel">
 <widget-code language="css">/*
-    代码块注释
+代码块注释
 */
 body{
-    --side-background-color: #fff;
-    --side-border-color: #f0f0f0;
+--side-background-color: #fff;
+--side-border-color: #f0f0f0;
 }
 .mod-panel .bd{
-    flex: 1;
-    overflow-y: auto;
+flex: 1;
+overflow-y: auto;
 }
 .mod-panel .outer{
-    position: relative;
-    padding: 5px 10px 5px 60px;
-    counter-reset: lineNumber;
+position: relative;
+padding: 5px 10px 5px 60px;
+counter-reset: lineNumber;
 }
 .mod-panel .outer::before{
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 50px;
-    height: 100%;
-    background-color: var(--side-background-color);
-    border-right: 2px solid var(--side-border-color);
-    content: '';
+position: absolute;
+left: 0;
+top: 0;
+width: 50px;
+height: 100%;
+background-color: var(--side-background-color);
+border-right: 2px solid var(--side-border-color);
+content: '';
 }
 @keyframes move {
-    50% {
-        left: 50%;
-        right: 49.95%;
-    }
-    100% {
-        left: 90%;
-        right: 9.7%;
-    }
+50% {
+left: 50%;
+right: 49.95%;
+}
+100% {
+left: 90%;
+right: 9.7%;
+}
 }</widget-code>
-                                    </div>
-                                    <div class="panel">
+                            </div>
+                            <div class="panel">
 <widget-code language="html">&lt;!DOCTYPE html&gt;
 &lt;html&gt;
-    &lt;head&gt;
-        &lt;title&gt;测试网页&lt;/title&gt;
-        &lt;style&gt;
-            body{
-                font-size: 15px;
-            }
-        &lt;/style&gt;
-        &lt;script&gt;
-        let person = {
-            name:'Tom',
-            age:12
-        };
-        const template = `字符串模板
-        你好, ${some}
-        欢迎使用本组件`;
-        &lt;/script&gt;
-    &lt;/head&gt;
-    &lt;body&gt;
-        &lt;article name="test"&gt;
-            &lt;h1&gt;文章标题&lt;/h1&gt;
-            &lt;section&gt;
-                &lt;p&gt;这段文字是文章段落内容&lt;/p&gt;
-            &lt;/section&gt;
-        &lt;/article&gt;
-        &lt;!--这是一段注释。注释不会在浏览器中显示。--&gt;
-    &lt;/body&gt;
-&lt;/html&gt;</widget-code>
-                                    </div>
-                                    <div class="panel">
-<widget-code language="php">&lt;div name="test"&gt;
+&lt;head&gt;
+&lt;title&gt;测试网页&lt;/title&gt;
+&lt;style&gt;
+    body{
+        font-size: 15px;
+    }
+&lt;/style&gt;
+&lt;script&gt;
+let person = {
+    name:'Tom',
+    age:12
+};
+const template = `字符串模板
+你好, ${some}
+欢迎使用本组件`;
+&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;article name="test"&gt;
     &lt;h1&gt;文章标题&lt;/h1&gt;
-&lt;/div&gt;
+    &lt;section&gt;
+        &lt;p&gt;这段文字是文章段落内容&lt;/p&gt;
+    &lt;/section&gt;
+&lt;/article&gt;
 &lt;!--这是一段注释。注释不会在浏览器中显示。--&gt;
-&lt;?php
-/*
+&lt;/body&gt;
+&lt;/html&gt;</widget-code>
+                            </div>
+                            <div class="panel">
+    <widget-code language="php">&lt;div name="test"&gt;
+    &lt;h1&gt;文章标题&lt;/h1&gt;
+    &lt;/div&gt;
+    &lt;!--这是一段注释。注释不会在浏览器中显示。--&gt;
+    &lt;?php
+    /*
     PHP代码演示
-*/
-$name = "李雷";
-$age = 30;
-echo "你好{$name}，欢迎使用本组件";
-echo number_format($age);
+    */
+    $name = "李雷";
+    $age = 30;
+    echo "你好{$name}，欢迎使用本组件";
+    echo number_format($age);
 
-// 冒泡排序
-function bubbleSort($arr) {
+    // 冒泡排序
+    function bubbleSort($arr) {
     $len = count($arr);
     // 这里比较N次
     for($i = 0; $i< $len - 1; $i++) {
@@ -243,66 +269,81 @@ function bubbleSort($arr) {
         }
     }
     return $arr;
-}
+    }
 
-// 这个是计算毫秒耗时的方法
-function execTime($microTime = 0) {
+    // 这个是计算毫秒耗时的方法
+    function execTime($microTime = 0) {
     $microTime && var_dump(microtime(true)*1000 - $microTime);
     return microtime(true)*1000;
-}
+    }
 
-bubbleSort($arr);
-$time = execTime(100);
-?&gt;</widget-code>
-                                    </div>
-                                </div>
+    bubbleSort($arr);
+    $time = execTime(100);
+    ?&gt;</widget-code>
                             </div>
                         </div>
+                    </section>
+                    <section class="module mod-article">
+                        <div class="hd"><span>关于代码着色美化组件</span></div>
+                        <div class="bd">
+                            <p>语法高亮是文本编辑器用来显示文本的，特别是源代码，根据不同的类别来用不同的颜色和字体显示。这个功能有助于编写结构化的语言，比如编程语言，标记语言，这些语言的语法错误显示是有区别的。语法高亮并不会影响文本自身的意义，而且能很好的符合人们的阅读习惯。</p>
+                        </div>
+                    </section>
+                </div>
+                <section class="module mod-copy">
+                    <div class="inner">
+                        <div class="hd"><span>算法开源</span></div>
+                        <div class="bd">
+                            <p><span>算法基于「<a href="https://github.com/mumuy/widget-code/blob/master/LICENSE" rel="nofollow" target="_blank">MIT许可协议</a>」开源，除需在源码中保留版权信息和许可声明外，你有权利使用、复制、修改、合并、出版发行、散布、再授权及贩售软件及软件的副本。</span>数据持续更新中，如发现错漏或有想法建议可在此</span> <a class="text-red" href="https://github.com/mumuy/widget-qrcode/issues" rel="nofollow" target="_blank">反馈问题</a>。</p>
+                            <div class="buttons">
+                                <a class="github-button" href="https://github.com/mumuy" data-color-scheme="no-preference: light; light: light; dark: dark;" data-size="large" aria-label="Follow @mumuy on GitHub">Follow @mumuy</a>
+                                <a class="github-button" href="https://github.com/mumuy/widget-code/fork" data-color-scheme="no-preference: light; light: light; dark: dark;" data-icon="octicon-repo-forked" data-size="large" data-show-count="true" aria-label="Fork mumuy/widget-qrcode on GitHub">Fork</a>
+                                <a class="github-button" href="https://github.com/mumuy/widget-code" data-color-scheme="no-preference: light; light: light; dark: dark;" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star mumuy/widget-qrcode on GitHub">Star</a>
+                                <a class="github-button" href="https://github.com/mumuy/widget-code/archive/HEAD.zip" data-icon="octicon-download" data-size="large" aria-label="Download mumuy/widget-code on GitHub">Download</a>
+                            </div>
+                            <code>&lt;script type="text/javascript" src="https://passer-by.com/widget-code/dist/widget-code.min.js"&gt;&lt;/script&gt;</code>
+                        </div>
+                    </div>
+                </section>
+                <div class="inner">
+                    <script type="text/javascript" src="https://passer-by.com/static/script/projects.js"></script>
+                </div>
+            </div>
+            <footer>
+                <div class="mod-fixedbar">
+                    <div class="bd">
+                        <ul>
+                            <li>
+                                <a class="gotop" href="javascript:;" rel="nofollow">
+                                    <img src="https://www.passer-by.com/static/image/public/icon-gotop.png" width="24" height="24" alt="回到顶部">
+                                </a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
-                <div class="mod-article">
-					<div class="inner">
-						<div class="bd">
-							<p>语法高亮是文本编辑器用来显示文本的，特别是源代码，根据不同的类别来用不同的颜色和字体显示。这个功能有助于编写结构化的语言，比如编程语言，标记语言，这些语言的语法错误显示是有区别的。语法高亮并不会影响文本自身的意义，而且能很好的符合人们的阅读习惯。</p>
-						</div>
-					</div>
-				</div>
-				<div class="mod-copy">
-					<div class="inner">
-						<div class="hd"><span>算法开源</span></div>
-						<div class="bd">
-							<p><span>算法基于「<a href="https://github.com/mumuy/widget-code/blob/master/LICENSE" rel="nofollow" target="_blank">MIT许可协议</a>」开源，除需在源码中保留版权信息和许可声明外，你有权利使用、复制、修改、合并、出版发行、散布、再授权及贩售软件及软件的副本。</span>数据持续更新中，如发现错漏或有想法建议可在此</span> <a class="text-red" href="https://github.com/mumuy/widget-qrcode/issues" rel="nofollow" target="_blank">反馈问题</a>。</p>
-							<div class="buttons">
-								<a class="github-button" href="https://github.com/mumuy" data-color-scheme="no-preference: light; light: light; dark: dark;" data-size="large" aria-label="Follow @mumuy on GitHub">Follow @mumuy</a>
-								<a class="github-button" href="https://github.com/mumuy/widget-code/fork" data-color-scheme="no-preference: light; light: light; dark: dark;" data-icon="octicon-repo-forked" data-size="large" data-show-count="true" aria-label="Fork mumuy/widget-qrcode on GitHub">Fork</a>
-								<a class="github-button" href="https://github.com/mumuy/widget-code" data-color-scheme="no-preference: light; light: light; dark: dark;" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star mumuy/widget-qrcode on GitHub">Star</a>
-								<a class="github-button" href="https://github.com/mumuy/widget-code/archive/HEAD.zip" data-icon="octicon-download" data-size="large" aria-label="Download mumuy/widget-code on GitHub">Download</a>
-							</div>
-                            <code>&lt;script type="text/javascript" src="https://passer-by.com/widget-code/dist/widget-code.min.js"&gt;&lt;/script&gt;</code>
-						</div>
-					</div>
-				</div>
-				<div class="mod-foot">
-					<div class="inner">
-						<div class="bd">
-							<p>Copyright &copy; <a href="http://passer-by.com">passer-by.com</a></p>
-						</div>
-					</div>
-				</div>
-            </div>
+                <div class="mod-foot">
+                    <div class="bd">
+                        <p>
+                            <span>Copyright &copy; 2025</span>
+                            <a href="/">路人甲</a>
+                            <span>版权所有</span>
+                        </p>
+                    </div>
+                </div>
+            </footer>
         </div>
         <script type="text/javascript" src="./dist/widget-code.min.js?v=202401042300"></script>
         <script type="text/javascript" src="https://jquerywidget.com/static/script/jquery.min.js"></script>
         <script type="text/javascript" src="https://jquerywidget.com/code/jquery.tabs.js"></script>
         <script type="text/javascript">
-            $('.tabs').tabs({
+            $('.mod-tabs').tabs({
                 'navCls':'nav',
-                'contentCls':'c-bd',
+                'contentCls':'bd',
                 'triggerType':'click'
             })
         </script>
         <script async defer src="https://cdn.bootcdn.net/ajax/libs/github-buttons/2.21.1/buttons.min.js"></script>
-		<script type="text/javascript" src="https://passer-by.com/public/script/projects.js"></script>
-		<script type="text/javascript" src="https://passer-by.com/public/script/stat.js"></script>
+        <script type="text/javascript" src="https://passer-by.com/static/script/common.js"></script>
+        <script type="text/javascript" src="https://passer-by.com/static/script/stat.js"></script>
     </body>
 </html>
