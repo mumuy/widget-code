@@ -1,6 +1,6 @@
 import codeParser from './module/codeParser.js';
 import copyToClipboard from './module/method/copyToClipboard.js';
-import styleSheet from './style/default.css' assert { type: 'css'};
+import styleSheet from './style/default.css' with { type: 'css'};
 
 class WidgetCode extends HTMLElement {
     constructor() {
