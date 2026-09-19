@@ -9,6 +9,7 @@
     --button-background-color: rgba(0, 0, 0, 0.1);
     --button-text-color: rgba(0, 0, 0, 0.5);
     --code-comment: #999;
+    --code-buildin: #c05621;
     --code-shell: #999;
     --code-keyword: #c6c;
     --code-operator: #888;
