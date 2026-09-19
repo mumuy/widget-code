@@ -36,15 +36,24 @@ class codeParser{
                 let themeSheet = _.#theme.styleSheet;
                 for(let rule of themeSheet.cssRules){
                     let isMatch = true;
-                    if(rule.selectorText.match(/\[language=.+\]/)){
+                    if(rule.selectorText && rule.selectorText.match(/\[language=.+\]/)){
                         let attribute = `[language="${language}"]`;
                         isMatch = rule.selectorText.includes(attribute);
                     }
-                    if(isMatch){
-                        rule.styleMap.forEach(function(type,value){
-                            if(value.includes('--code-')){
-                                tokenKeys.push(value.replace('--code-',''));
-                            }
+                    if(!isMatch){
+                        continue;
+                    }
+                    // 兼容：优先 styleMap（Chrome/Edge/Safari），缺失时回退 cssText 解析（Firefox）
+                    let style = rule.styleMap;
+                    if(style && typeof style.forEach === 'function'){
+                        style.forEach(function(value,key){
+                            if(String(key).includes('--code-')){
+                                tokenKeys.push(String(key).replace('--code-',''));
+                             }
+                         });
+                    }else if(rule.style && rule.style.cssText){
+                        (rule.style.cssText.match(/--code-[\w-]+/g)||[]).forEach(function(key){
+                            tokenKeys.push(key.replace('--code-',''));
                         });
                     }
                 }
@@ -52,10 +61,7 @@ class codeParser{
             return tokenKeys;
         };
         let parseEntity = function(language,content){
-            if(['xml','html','php'].includes(language)){
-                return content.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/'/g,'&apos;').replace(/"/g,'&quot;');
-            }
-            return content;
+            return content.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/'/g,'&apos;').replace(/"/g,'&quot;');
         };
         let parseContent = function(language,content,rules){
             let tokenKeys = getTokenKeys(language);

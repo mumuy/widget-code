@@ -5,10 +5,10 @@ export default {
     }],
     string:[{
         type:'string',
-        match:/\".+?\"|\'.+?\'/g
+        match:/"(?:\\.|[^"\\])*"|'(?:\\.|[^'\\])*'/g
     },{
         type:'string',
-        match:/\`[\s\S]+?\`/g,
+        match:/`(?:\\.|[^`\\])*`/g,
         rules:[{
             type:'variable',
             match:/\${.+?}/g
@@ -32,7 +32,7 @@ export default {
     }],
     keyword:[{
         type:'keyword',
-        match:/(^|(?<=\W))(return|void|continue|for|if|else|switch|do|while|default|throw|delete|try|catch|finally|function|with|debugger|class|enum|extends|export|import|impelements|new|typeof|var|let|const|public|yield|interface|package|static|async|await|instanceof)(?=\W)/g,
+        match:/(^|(?<=\W))(return|void|continue|for|if|else|switch|do|while|default|throw|delete|try|catch|finally|function|with|debugger|class|enum|extends|export|import|implements|new|typeof|var|let|const|public|yield|interface|package|static|async|await|instanceof)(?=\W)/g,
     },{
         type:'keyword',
         match:/(?<=for\s*\(.+?\s)(in|of)(?=\s.+?\))/g
@@ -45,7 +45,7 @@ export default {
     }],
     buildin:[{
         type:'buildin',
-        match:/(^|(?<=\W))(Object|Function|Array|Stirng|Boolean|Number|Date|RegExp|Buffer|ArrayBuffer|Int8Array|Uint8ClampedArray|Int16Array|Int32Array|Float32Array|Float64Array|Uint32Array|BigUint64Array|Blob|Math|Error|EvalError|RangeError|ReferenceError|SyntaxError|TypeError|URIError|JSON|Reflect|Proxy|Worker|WebSocket|EventSource|FileReader|FormData|Set|Map|WeakSet|WeakMap|Atomics|DataView|Iterator|DataView|Intl|URL|Infinity|Symbol|BigInt|NaN)(?=\W)/g
+        match:/(^|(?<=\W))(Object|Function|Array|String|Boolean|Number|Date|RegExp|Buffer|ArrayBuffer|Int8Array|Uint8ClampedArray|Int16Array|Int32Array|Float32Array|Float64Array|Uint32Array|BigUint64Array|Blob|Math|Error|EvalError|RangeError|ReferenceError|SyntaxError|TypeError|URIError|JSON|Reflect|Proxy|Worker|WebSocket|EventSource|FileReader|FormData|Set|Map|WeakSet|WeakMap|Atomics|DataView|Iterator|DataView|Intl|URL|Infinity|Symbol|BigInt|NaN)(?=\W)/g
     }],
     variable:[{
         type:'variable',

@@ -33,7 +33,7 @@
     --code-tag: #c66;
     --code-directive: #ccc;
 }
-:host-context([language='css']){
+:host([language='css']){
     --code-variable: #c66;
     --code-attribute: #9c9;
 }
