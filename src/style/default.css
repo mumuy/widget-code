@@ -2,6 +2,7 @@
     display: block;
     font-family: Arial,Helvetica,"Microsoft Yahei";
     font-size: 14px;
+    white-space: normal;
     --panel-background-color: #2d2d2d;
     --panel-text-color: #ccc;
     --side-background-color: rgba(255, 255, 255, 0.05);
