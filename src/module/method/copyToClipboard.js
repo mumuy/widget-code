@@ -13,10 +13,14 @@ export default function(text){
                 $dom.innerText = text;
                 $dom.focus();
                 selection.selectAllChildren($dom);
-                document.execCommand("Copy");
+                var ok = document.execCommand("Copy");
                 window.setTimeout(function () {
                     document.body.removeChild($dom);
-                    resolve();
+                    if(ok){
+                        resolve();
+                    }else{
+                        reject();
+                    }
                 }, 100);
             }else{
                 reject();
