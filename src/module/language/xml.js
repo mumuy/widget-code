@@ -27,7 +27,7 @@ export default {
             match:/<!--[\s\S]+-->/g
         },{
             type:'tag',
-            match:/<[\w\-]+(\s)?.*?>|<\/[\w-]+>/g,
+            match:/<[\w\-]+\b[^>]*>|<\/[\w-]+>/g,
             rules:[{
                 type:'punctuation',
                 match:/=/g
