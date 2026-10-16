@@ -77,7 +77,7 @@ class codeParser{
                             let inRange = false;    // 防止相同类型判断交叉匹配
                             parseResult.forEach(function(range){
                                 if(range.type==rule.type){
-                                    if(start>=range.start && start<=range.end || end>=range.start && end<=range.end){
+                                    if(start>range.start && start<range.end || end>range.start && end<range.end){
                                         inRange = true;
                                     }
                                 }
