@@ -108,20 +108,20 @@ const template = `字符串模板
 const randNumber = [13, 7, 11, 3, 9, 15.4, 17];
 // 对象
 const person = {
-name:'Tony',
-age:18,
-doWork:function(){
-},
-doThing(){
-}
+    name:'Tony',
+    age:18,
+    doWork:function(){
+    },
+    doThing(){
+    }
 };
 // 类
 class Animal {
-constructor(name, url) {
-    super();
-    this.name = name;
-    this.url = url;
-}
+    constructor(name, url) {
+        super();
+        this.name = name;
+        this.url = url;
+    }
 }
 // 方法调用
 console.log(person.name);</widget-code>
@@ -134,39 +134,33 @@ console.log(person.name);</widget-code>
 * @param {string} author - The author of the person.
 */
 class Person {
-public name: string;
-private age: number;
-protected gender: string;
-
-constructor(name: string, age: number, gender: string) {
-this.name = name;
-this.age = age;
-this.gender = gender;
-}
-
-sayHello(): void {
-console.log(`hello, my name is ${this.name}, I'm ${this.age} years old`);
-}
+    public name: string;
+    private age: number;
+    protected gender: string;
+    constructor(name: string, age: number, gender: string) {
+        this.name = name;
+        this.age = age;
+        this.gender = gender;
+    }
+    sayHello(): void {
+        console.log(`hello, my name is ${this.name}, I'm ${this.age} years old`);
+    }
 }
 
 type MapToPromise&lt;T&gt; = { [K in keyof T]: Promise&lt;T[K]&gt; };
 
-
 class Student extends Person {
-grade: number;
-
-constructor(name: string, age: number, gender: string, grade: number) {
-super(name, age, gender);
-this.grade = grade;
-}
-
-study(): void {
-console.log(`I'm studying in grade ${this.grade}`);
-}
-
-showGender(): void {
-console.log(`My gender is ${this.gender}`); // 可以访问父类的protected属性
-}
+    grade: number;
+    constructor(name: string, age: number, gender: string, grade: number) {
+        super(name, age, gender);
+        this.grade = grade;
+    }
+    study(): void {
+        console.log(`I'm studying in grade ${this.grade}`);
+    }
+    showGender(): void {
+        console.log(`My gender is ${this.gender}`); // 可以访问父类的protected属性
+    }
 }
 
 const person = new Person('Tom', 20, 'male');
@@ -182,77 +176,77 @@ student.showGender(); // 可以访问protected属性</widget-code>
 代码块注释
 */
 body{
---side-background-color: #fff;
---side-border-color: #f0f0f0;
+    --side-background-color: #fff;
+    --side-border-color: #f0f0f0;
 }
 .mod-panel .bd{
-flex: 1;
-overflow-y: auto;
+    flex: 1;
+    overflow-y: auto;
 }
 .mod-panel .outer{
-position: relative;
-padding: 5px 10px 5px 60px;
-counter-reset: lineNumber;
+    position: relative;
+    padding: 5px 10px 5px 60px;
+    counter-reset: lineNumber;
 }
 .mod-panel .outer::before{
-position: absolute;
-left: 0;
-top: 0;
-width: 50px;
-height: 100%;
-background-color: var(--side-background-color);
-border-right: 2px solid var(--side-border-color);
-content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 50px;
+    height: 100%;
+    background-color: var(--side-background-color);
+    border-right: 2px solid var(--side-border-color);
+    content: '';
 }
 @keyframes move {
-50% {
-left: 50%;
-right: 49.95%;
-}
-100% {
-left: 90%;
-right: 9.7%;
-}
+    50% {
+        left: 50%;
+        right: 49.95%;
+    }
+    100% {
+        left: 90%;
+        right: 9.7%;
+    }
 }</widget-code>
                             </div>
                             <div class="panel">
 <widget-code language="html">&lt;!DOCTYPE html&gt;
 &lt;html&gt;
-&lt;head&gt;
-&lt;title&gt;测试网页&lt;/title&gt;
-&lt;style&gt;
-    body{
-        font-size: 15px;
-    }
-&lt;/style&gt;
-&lt;script src="./index.js"&gt;&lt;/script&gt;
-&lt;script&gt;
-let person = {
-    name:'Tom',
-    age:12
-};
-const template = `字符串模板
-你好, ${some}
-欢迎使用本组件`;
-&lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-&lt;article name="test"&gt;
-    &lt;h1&gt;文章标题&lt;/h1&gt;
-    &lt;section&gt;
-        &lt;p&gt;这段文字是文章段落内容&lt;/p&gt;
-    &lt;/section&gt;
-&lt;/article&gt;
-&lt;!--这是一段注释。注释不会在浏览器中显示。--&gt;
-&lt;/body&gt;
+    &lt;head&gt;
+        &lt;title&gt;测试网页&lt;/title&gt;
+        &lt;style&gt;
+            body{
+                font-size: 15px;
+            }
+        &lt;/style&gt;
+        &lt;script src="./index.js"&gt;&lt;/script&gt;
+        &lt;script&gt;
+        let person = {
+            name:'Tom',
+            age:12
+        };
+        const template = `字符串模板
+        你好, ${some}
+        欢迎使用本组件`;
+        &lt;/script&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+    &lt;article name="test"&gt;
+        &lt;h1&gt;文章标题&lt;/h1&gt;
+        &lt;section&gt;
+            &lt;p&gt;这段文字是文章段落内容&lt;/p&gt;
+        &lt;/section&gt;
+    &lt;/article&gt;
+    &lt;!--这是一段注释。注释不会在浏览器中显示。--&gt;
+    &lt;/body&gt;
 &lt;/html&gt;</widget-code>
                             </div>
                             <div class="panel">
-    <widget-code language="php">&lt;div name="test"&gt;
+<widget-code language="php">&lt;div name="test"&gt;
     &lt;h1&gt;文章标题&lt;/h1&gt;
-    &lt;/div&gt;
-    &lt;!--这是一段注释。注释不会在浏览器中显示。--&gt;
-    &lt;?php
+&lt;/div&gt;
+&lt;!--这是一段注释。注释不会在浏览器中显示。--&gt;
+&lt;?php
     /*
     PHP代码演示
     */
@@ -263,30 +257,30 @@ const template = `字符串模板
 
     // 冒泡排序
     function bubbleSort($arr) {
-    $len = count($arr);
-    // 这里比较N次
-    for($i = 0; $i< $len - 1; $i++) {
-        // 每次比较实际上都要-$i，因为每次比较结束后最后一个值就不用参与下次比较了
-        for($n = 0; $n < $len - 1 - $i; $n ++) {
-            if($arr[$n] > $arr[$n + 1]) {
-                $t = $arr[$n];
-                $arr[$n] = $arr[$n + 1];
-                $arr[$n + 1] = $t;
+        $len = count($arr);
+        // 这里比较N次
+        for($i = 0; $i< $len - 1; $i++) {
+            // 每次比较实际上都要-$i，因为每次比较结束后最后一个值就不用参与下次比较了
+            for($n = 0; $n < $len - 1 - $i; $n ++) {
+                if($arr[$n] > $arr[$n + 1]) {
+                    $t = $arr[$n];
+                    $arr[$n] = $arr[$n + 1];
+                    $arr[$n + 1] = $t;
+                }
             }
         }
-    }
-    return $arr;
+        return $arr;
     }
 
     // 这个是计算毫秒耗时的方法
     function execTime($microTime = 0) {
-    $microTime && var_dump(microtime(true)*1000 - $microTime);
-    return microtime(true)*1000;
+        $microTime && var_dump(microtime(true)*1000 - $microTime);
+        return microtime(true)*1000;
     }
 
     bubbleSort($arr);
     $time = execTime(100);
-    ?&gt;</widget-code>
+?&gt;</widget-code>
                             </div>
                         </div>
                     </section>

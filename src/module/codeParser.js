@@ -73,6 +73,18 @@ class codeParser{
                         for(let item of matchList){
                             let value = item[0];
                             let start = item.index;
+                            let end = start + value.length;
+                            let inRange = false;    // 防止相同类型判断交叉匹配
+                            parseResult.forEach(function(range){
+                                if(range.type==rule.type){
+                                    if(start>=range.start && start<=range.end || end>=range.start && end<=range.end){
+                                        inRange = true;
+                                    }
+                                }
+                            });
+                            if(inRange){
+                                continue;
+                            }
                             let tokens = value.match(/\n|.+/g).map(function(subValue){
                                 let end = start + subValue.length;
                                 let token = {
@@ -166,22 +178,59 @@ class codeParser{
                     }
                 }
             });
+            // 和其他语言的重叠
             let inOtherRanges = function(item){
-                let isInRange = false;
+                const in_ranges = [];
                 ranges.forEach(function(range){
-                    if(item.start>=range.start&&item.end<=range.end){
-                        isInRange = true;
+                    if(item.start>=range.start&&item.end<=range.end){   // 全包含
+                        in_ranges.push(item);
+                    }else if(item.start>=range.start&&item.start<=range.end){
+                        in_ranges.push({
+                            start: item.start,
+                            end: range.end
+                        });
+                    }else if(item.end>=range.start&&item.end<=range.end){
+                        in_ranges.push({
+                            start: range.start,
+                            end: item.end
+                        });
                     }
                 });
-                return isInRange;
+                return in_ranges;
             }
             _.#language.groups.filter(group=>group.default).forEach(function(group){
-                let matchList = _.#content.matchAll(group.match);
+                let matchList = _.#content.match(group.match);
                 if(matchList){
                     for(let temp of matchList){
-                        parseResult = parseResult.concat(
-                            parseContent(group.type,_.#content,group.rules).filter(item=>!inOtherRanges(item))
-                        );
+                        parseContent(group.type,_.#content,group.rules).forEach(function(item){
+                            const ranges = inOtherRanges(item);
+                            if(ranges.length){
+                                if(ranges.length==1&&ranges[0].start==item.start&&ranges[0].end==item.end){
+                                    return;
+                                }
+                                let start = item.start;
+                                ranges.forEach(function(range){
+                                    if(start<range.start){
+                                        parseResult = parseResult.concat([{
+                                            ...item,
+                                            value: item.value.substring(start-item.start,range.start-item.start),
+                                            start: start,
+                                            end: range.start
+                                        }]);
+                                        start = range.end;
+                                    }
+                                });
+                                if(start<item.end){
+                                    parseResult = parseResult.concat([{
+                                        ...item,
+                                        start: start,
+                                        end: item.end 
+                                    }]);
+                                }
+                            }else{
+                                parseResult = parseResult.concat([item]);
+                            }
+                        });
                     }
                 }
             });

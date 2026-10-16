@@ -5,14 +5,14 @@ export default {
     }],
     string:[{
         type:'string',
-        match:/"(?:\\.|[^"\\])*"|'(?:\\.|[^'\\])*'/g
-    },{
-        type:'string',
         match:/`(?:\\.|[^`\\])*`/g,
         rules:[{
             type:'variable',
             match:/\${.+?}/g
         }]
+    },{
+        type:'string',
+        match:/"(?:\\.|[^"\\])*"|'(?:\\.|[^'\\])*'/g
     }],
     parameter:[{
         type:'parameter',
