@@ -24,10 +24,10 @@ export default {
             }]
         },{
             type:'comment',
-            match:/<!--[\s\S]+-->/g
+            match:/<!--[\s\S]+?-->/g
         },{
             type:'tag',
-            match:/<[\w\-]+\b[^>]*>|<\/[\w-]+>/g,
+            match:/<[\w\-]+\b[^>]*?>|<\/[\w-]+>/g,
             rules:[{
                 type:'punctuation',
                 match:/=/g
